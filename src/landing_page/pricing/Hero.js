@@ -21,7 +21,7 @@ function Hero() {
     return ( 
         <>
         <div className="container mx-auto px-4 py-16 text-center" style={{margin:"50px"}}>
-            <h2 className="text-4xl font-bold mb-4">Charges</h2>
+            <h2 className="fw-bold mb-4 text-center">Charges</h2>
             <p className="text-lg text-gray-600">List of all charges and taxes</p>
         </div>
         <div className="pricing-section">
