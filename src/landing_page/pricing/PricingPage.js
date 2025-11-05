@@ -1,11 +1,11 @@
 import React from 'react'
-import Hero from './Hero';
-import Brokerage from './Brokerage';
+import Hero from './Hero'; 
+import BrokerageCalculator from './BrokerageCalculator';
 function Pricing() {
     return ( 
         <>
         <Hero />
-        <Brokerage />
+        <BrokerageCalculator />
         </>
      );
 }

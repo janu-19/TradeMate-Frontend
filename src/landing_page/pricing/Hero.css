@@ -1,0 +1,39 @@
+.pricing-section {
+  background-color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  flex: 1 1 280px;
+  max-width: 300px;
+}
+
+.price {
+  color: #f7931a; /* orange like Zerodha */
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #212529;
+}
+
+.desc {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
