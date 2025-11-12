@@ -1,6 +1,7 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 function Hero() {
+  const navigate = useNavigate();
   return (
     <section className="hero-section py-5 text-center">
       <div className="container">
@@ -24,11 +25,11 @@ function Hero() {
               TradeMate is your one-stop online platform to invest in stocks, derivatives,
               mutual funds, ETFs, bonds, and more — all in one place.
             </p>
-            <button className="btn btn-primary px-5 py-2 fw-semibold">
-              Start Investing Now
-            </button>
-          </div>
-        </div>
+            <button className="btn btn-primary px-5 py-2 fw-semibold" onClick={() => window.location.href = '/signup'}>
+              Start Investing Now {() => navigate('/signup')} 
+            </button> {() => navigate('/signup')} 
+          </div> 
+        </div>  
       </div>
     </section>
   );

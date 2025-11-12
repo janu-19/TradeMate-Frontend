@@ -1,6 +1,16 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 function Navbar() {
+  const { isAuthenticated, user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light sticky-top shadow-sm"
@@ -12,13 +22,13 @@ function Navbar() {
     >
       <div className="container">
         {/* Logo */}
-        <a className="navbar-brand d-flex align-items-center" href="/">
+        <Link className="navbar-brand d-flex align-items-center" to="/">
           <img
             src="images/TradeMateLogo.png"
             alt="TradeMate Logo"
             style={{ width: "150px", height: "40px" }}
           />
-        </a>
+        </Link>
 
         {/* Mobile Toggle */}
         <button
@@ -36,11 +46,32 @@ function Navbar() {
         {/* Navbar Links */}
         <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div className="navbar-nav d-flex align-items-center gap-4">
-            <a className="nav-link fw-semibold" href="/signup">Sign Up</a>
-            <a className="nav-link fw-semibold" href="/about">About</a>
-            <a className="nav-link fw-semibold" href="/products">Products</a>
-            <a className="nav-link fw-semibold" href="/pricing">Pricing</a>
-            <a className="nav-link fw-semibold" href="/support">Support</a>
+            {isAuthenticated ? (
+              <>
+                <Link className="nav-link fw-semibold" to="/dashboard">
+                  Dashboard
+                </Link>
+                <span className="nav-link fw-semibold text-muted">
+                  {user?.name || 'User'}
+                </span>
+                <button
+                  className="btn btn-outline-danger btn-sm"
+                  onClick={handleLogout}
+                  style={{ marginLeft: "10px" }}
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link className="nav-link fw-semibold" to="/login">Login</Link>
+                <Link className="nav-link fw-semibold" to="/signup">Sign Up</Link>
+              </>
+            )}
+            <Link className="nav-link fw-semibold" to="/about">About</Link>
+            <Link className="nav-link fw-semibold" to="/products">Products</Link>
+            <Link className="nav-link fw-semibold" to="/pricing">Pricing</Link>
+            <Link className="nav-link fw-semibold" to="/support">Support</Link>
           </div>
         </div>
       </div>

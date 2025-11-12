@@ -1,6 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Team() {
+  const navigate = useNavigate();
+
+  const handleOpenAccount = () => {
+    navigate('/signup');
+  };
+
   return (
     <div className="team-page" style={{ backgroundColor: "#f9f9f9" }}>
       
@@ -22,7 +29,7 @@ function Team() {
           <div className="col-md-6 text-start">
             <h3 className="fw-bold mb-3">Meet the Founder</h3>
             <p className="text-muted mb-3">
-              Hi, I’m <strong>Jahnavi</strong> — the founder and developer behind <strong>TradeMate</strong>.
+              Hi, I'm <strong>Jahnavi</strong> — the founder and developer behind <strong>TradeMate</strong>.
               I built this platform as part of my full-stack learning journey, combining my love for
               technology and finance to create a product that simplifies trading for everyone.
             </p>
@@ -41,7 +48,10 @@ function Team() {
       >
         <h4 className="fw-bold mb-3">Join us on our mission to simplify trading</h4>
         <p className="mb-4 text-muted">Start your investment journey today with TradeMate.</p>
-        <button className="btn btn-primary px-4 py-2 rounded-pill shadow-sm">
+        <button 
+          className="btn btn-primary px-4 py-2 rounded-pill shadow-sm"
+          onClick={handleOpenAccount}
+        >
           Open Account
         </button>
       </section>

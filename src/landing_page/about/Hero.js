@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/signup');
+  };
+
   return (
     <div className="about-page" style={{ backgroundColor: "#f9f9f9" }}>
       {/* Hero Section */}
@@ -12,7 +19,12 @@ function Hero() {
         <p className="text-muted fs-5 mb-4">
           TradeMate is on a mission to make trading easy, transparent, and accessible for all investors.
         </p>
-        <button className="btn btn-primary px-4 py-2">Get Started</button>
+        <button 
+          className="btn btn-primary px-4 py-2" 
+          onClick={handleGetStarted}
+        >
+          Get Started
+        </button>
       </section>
 
       {/* Story Section */}
