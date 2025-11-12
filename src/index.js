@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import axios from 'axios';
 import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import { API_BASE_URL } from './config';
+
+axios.defaults.baseURL = API_BASE_URL;
 
 // Pages
 import HomePage from './landing_page/home/HomePage';

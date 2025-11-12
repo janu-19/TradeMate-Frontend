@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
 
   const verifyToken = async () => {
     try {
-      const response = await axios.get('http://localhost:3002/verify');
+      const response = await axios.get('/verify');
       setUser(response.data.user);
     } catch (error) {
       console.error('Token verification failed:', error);
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
   const signup = async (name, email, password) => {
     try {
       console.log('🔄 Attempting signup for:', email);
-      const response = await axios.post('http://localhost:3002/signup', {
+      const response = await axios.post('/signup', {
         name,
         email,
         password
@@ -74,7 +74,7 @@ export const AuthProvider = ({ children }) => {
       if (error.code === 'ECONNREFUSED' || error.message.includes('Network Error')) {
         return {
           success: false,
-          error: 'Cannot connect to server. Please make sure the backend is running on port 3002.'
+          error: 'Cannot connect to server. Please make sure the backend is running.'
         };
       }
       
@@ -102,7 +102,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       console.log('🔄 Attempting login for:', email);
-      const response = await axios.post('http://localhost:3002/login', {
+      const response = await axios.post('/login', {
         email,
         password
       });
@@ -133,7 +133,7 @@ export const AuthProvider = ({ children }) => {
       if (error.code === 'ECONNREFUSED' || error.message.includes('Network Error')) {
         return {
           success: false,
-          error: 'Cannot connect to server. Please make sure the backend is running on port 3002.'
+          error: 'Cannot connect to server. Please make sure the backend is running.'
         };
       }
       
