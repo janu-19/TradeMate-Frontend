@@ -6,9 +6,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import { API_BASE_URL } from './config';
-
-axios.defaults.baseURL = API_BASE_URL;
-
 // Pages
 import HomePage from './landing_page/home/HomePage';
 import AboutPage from './landing_page/about/AboutPage';
@@ -21,6 +18,8 @@ import DashboardPage from './landing_page/dashboard/DashboardPage';
 import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/Footer';
 import NotFound from './landing_page/NotFound';
+
+axios.defaults.baseURL = API_BASE_URL;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
