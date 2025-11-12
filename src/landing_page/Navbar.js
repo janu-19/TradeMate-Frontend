@@ -55,9 +55,6 @@ function Navbar() {
           <div className="navbar-nav d-flex align-items-center gap-3 ms-auto">
             {isAuthenticated ? (
               <>
-                <span className="nav-link fw-semibold text-muted mb-0">
-                  {user?.name || 'User'}
-                </span>
                 <button
                   className="btn btn-outline-danger btn-sm"
                   onClick={handleLogout}
@@ -68,9 +65,6 @@ function Navbar() {
             ) : (
               <>
                 <Link className="nav-link fw-semibold" to="/login">Login</Link>
-                <Link className="btn btn-primary btn-sm" to="/signup">
-                  Sign Up
-                </Link>
               </>
             )}
           </div>

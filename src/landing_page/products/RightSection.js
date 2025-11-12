@@ -1,6 +1,6 @@
 import React from 'react';
 
-function RightSection({ imageSrc, title, descriptions }) {
+function RightSection({ imageSrc, title, descriptions, demoLink }) {
 return (
     <div className="container py-5">
         <div className="row align-items-center justify-content-center">
@@ -15,6 +15,17 @@ return (
                             <p key={index} className="mb-3">{desc}</p>
                         ))}
                     </div>
+                    {demoLink && (
+                        <a
+                          href={demoLink}
+                          className="btn btn-primary mt-3 d-block mx-auto"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ width: "30%" }}
+                        >
+                          Live Demo
+                        </a>
+                    )}
                 </div>
             </div>
 
