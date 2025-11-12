@@ -44,20 +44,23 @@ function Navbar() {
         </button>
 
         {/* Navbar Links */}
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-          <div className="navbar-nav d-flex align-items-center gap-4">
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="navbar-nav gap-4 me-auto">
+            <Link className="nav-link fw-semibold" to="/">Home</Link>
+            <Link className="nav-link fw-semibold" to="/about">About</Link>
+            <Link className="nav-link fw-semibold" to="/products">Products</Link>
+            <Link className="nav-link fw-semibold" to="/pricing">Pricing</Link>
+            <Link className="nav-link fw-semibold" to="/support">Support</Link>
+          </div>
+          <div className="navbar-nav d-flex align-items-center gap-3 ms-auto">
             {isAuthenticated ? (
               <>
-                <Link className="nav-link fw-semibold" to="/dashboard">
-                  Dashboard
-                </Link>
-                <span className="nav-link fw-semibold text-muted">
+                <span className="nav-link fw-semibold text-muted mb-0">
                   {user?.name || 'User'}
                 </span>
                 <button
                   className="btn btn-outline-danger btn-sm"
                   onClick={handleLogout}
-                  style={{ marginLeft: "10px" }}
                 >
                   Logout
                 </button>
@@ -65,13 +68,11 @@ function Navbar() {
             ) : (
               <>
                 <Link className="nav-link fw-semibold" to="/login">Login</Link>
-                <Link className="nav-link fw-semibold" to="/signup">Sign Up</Link>
+                <Link className="btn btn-primary btn-sm" to="/signup">
+                  Sign Up
+                </Link>
               </>
             )}
-            <Link className="nav-link fw-semibold" to="/about">About</Link>
-            <Link className="nav-link fw-semibold" to="/products">Products</Link>
-            <Link className="nav-link fw-semibold" to="/pricing">Pricing</Link>
-            <Link className="nav-link fw-semibold" to="/support">Support</Link>
           </div>
         </div>
       </div>

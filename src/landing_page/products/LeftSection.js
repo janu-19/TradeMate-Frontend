@@ -1,5 +1,5 @@
 import React from 'react'
-function LeftSection({imageSrc, title, descriptions,demoLink}) {
+function LeftSection({imageSrc, title, descriptions}) {
     return ( 
         <div className='container'>
             <div className='row'>
@@ -11,11 +11,6 @@ function LeftSection({imageSrc, title, descriptions,demoLink}) {
                     {descriptions.map((desc, index) => (
                         <p key={index} className={index === 0 ? 'text mb-2' : ''}>{desc}</p>
                     ))}
-                    {demoLink && (
-                        <a href={demoLink} className='btn btn-primary mt-3' target='_blank' rel='noopener noreferrer' style={{width:"20%"}}>
-                            Live Demo
-                        </a>
-                    )}
                 </div>
             </div>
         </div>
