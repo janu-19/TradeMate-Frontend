@@ -25,9 +25,12 @@ function Hero() {
               TradeMate is your one-stop online platform to invest in stocks, derivatives,
               mutual funds, ETFs, bonds, and more — all in one place.
             </p>
-            <button className="btn btn-primary px-5 py-2 fw-semibold" onClick={() => window.location.href = '/signup'}>
-              Start Investing Now {() => navigate('/signup')} 
-            </button> {() => navigate('/signup')} 
+            <button
+              className="btn btn-primary px-5 py-2 fw-semibold"
+              onClick={() => navigate('/signup')}
+            >
+              Start Investing Now
+            </button>
           </div> 
         </div>  
       </div>
